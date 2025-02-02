@@ -6,7 +6,7 @@
 /*   By: cade-oli <cade-oli@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 10:16:51 by cade-oli          #+#    #+#             */
-/*   Updated: 2025/02/02 16:19:00 by cade-oli         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:24:37 by cade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
 	buffer = read_file(fd, buffer);
-	printf("buff: %s", buffer);
 	if (!buffer)
 		return (NULL);
 	line = get_line(buffer);
