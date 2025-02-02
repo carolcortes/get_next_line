@@ -6,7 +6,7 @@
 /*   By: cade-oli <cade-oli@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 10:16:59 by cade-oli          #+#    #+#             */
-/*   Updated: 2025/02/02 15:59:28 by cade-oli         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:20:21 by cade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-#include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 3
