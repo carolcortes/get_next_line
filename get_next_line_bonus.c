@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-oli <cade-oli@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 10:16:51 by cade-oli          #+#    #+#             */
-/*   Updated: 2025/02/11 22:05:57 by cade-oli         ###   ########.fr       */
+/*   Updated: 2025/02/11 22:26:27 by cade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,15 @@ char	*update_line(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffers[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = read_file(fd, buffer);
-	if (!buffer)
+	buffers[fd] = read_file(fd, buffers[fd]);
+	if (!buffers[fd])
 		return (NULL);
-	line = get_line(buffer);
-	buffer = update_line(buffer);
+	line = get_line(buffers[fd]);
+	buffers[fd] = update_line(buffers[fd]);
 	return (line);
 }
